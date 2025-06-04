@@ -6,6 +6,7 @@ import { useAuthentication } from "../../hooks/useAuthentication";
 
 import { useAuthValue } from "../../context/AuthContext";
 
+import Logo from "../images/Logo e favicon-03.avif"
 const NavBar = () => {
 
   const {user} = useAuthValue();
@@ -13,6 +14,7 @@ const NavBar = () => {
 
   return (
     <nav className={styles.navbar}>
+        <img src={Logo} alt="E-REL GOV" className={styles.logo}/>
         <ul className={styles.links_list}>
             {!user && (
                 <>
@@ -38,7 +40,7 @@ const NavBar = () => {
                     <NavLink 
                         to="/"
                         className={({isActive}) => (isActive ? styles.active : styles.no__active)}
-                        >Tarefas
+                        >Calendario
                     </NavLink>
                 </li>
                
@@ -52,7 +54,7 @@ const NavBar = () => {
             </li>
             {user && (
                 <li>
-                    <button onClick={logout}>Sair</button>
+                    <button className={styles.btn_sair} onClick={logout}>Sair</button>
                 </li>
             )}
         </ul>

@@ -1,5 +1,5 @@
 body {
-    background-color: #F0EFE9;
+    background-color: #ffffff;
     padding: 0;
     margin: 0;
     font-family: "Montserrat", sans-serif;
@@ -34,11 +34,6 @@ nav button:hover{
 }
 
 /*Form styles*/
-
-form {
-  max-width: 40%;
-  margin: 0 auto;
-}
 
 label {
   display: flex;

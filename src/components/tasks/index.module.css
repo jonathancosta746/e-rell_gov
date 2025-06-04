@@ -1,5 +1,8 @@
 .dashboard {
     text-align: center;
+    padding-left: 50px;
+    padding-right: 50px;
+      border-radius: 20px;
   }
   
   .dashboard h2 {
@@ -12,13 +15,70 @@
     margin-bottom: 1em;
   }
 
-  .taks__area{
-    margin-left: 0 auto;
-    margin-right: 0 auto;
-    width: 450px;
-    height: 300px;
-    overflow: auto;
-  }
+  
+.taks__area {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+}
+
+.cabecalho,
+.task_row {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr); 
+  align-items: center;
+  gap: 8px;
+  padding: 0px 12px;
+}
+
+.cabecalho {
+  background-color: #f0f0f0;
+  font-weight: bold;
+  border-bottom: 2px solid #ccc;
+}
+
+.cabecalho p{
+  color: rgb(70, 70, 70);
+}
+
+.task_row {
+  background-color: #fff;
+  border-bottom: 2px solid #4EBCBF;
+  transition: background 0.2s;
+}
+
+.task_row p{
+  color: black;
+}
+
+.task_row:hover {
+  background-color: #f9f9f9;
+}
+
+.status {
+  font-weight: bold;
+}
+
+.confirmado {
+  color: green!important;
+}
+
+.cancelado {
+  color: red!important;
+}
+
+.pendente {
+  color: orange!important;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
   .taks__area::-webkit-scrollbar {
     width: 10px;
@@ -45,24 +105,10 @@
     justify-content: space-between;
     font-weight: bold;
     border-bottom: 2px solid #ccc;
-    width: 80%;
     padding: 10px;
   }
   
-  .task_row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #eee;
-    width: 80%;
-    padding: 10px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  .task_row p {
-    color: #000;
-  }
+ 
   
   .btn__delete{
     background-color: rgb(255, 127, 127);

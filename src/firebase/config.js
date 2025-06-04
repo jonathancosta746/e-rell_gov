@@ -4,13 +4,14 @@ import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCJ66r8BxWyXMmrulmLLLKsaGFAM7v-E50",
-  authDomain: "gerenciador-de-tarefas-7047e.firebaseapp.com",
-  projectId: "gerenciador-de-tarefas-7047e",
-  storageBucket: "gerenciador-de-tarefas-7047e.appspot.com",
-  messagingSenderId: "180145229223",
-  appId: "1:180145229223:web:124f55445bbb6840daba82"
+  apiKey: "AIzaSyBUxVvKTwiTWDe1PyDgjjworCGZgK5smSU",
+  authDomain: "rellgov-fc4e2.firebaseapp.com",
+  projectId: "rellgov-fc4e2",
+  storageBucket: "rellgov-fc4e2.firebasestorage.app",
+  messagingSenderId: "191853036789",
+  appId: "1:191853036789:web:ac8d61084a17804ce2b1bc"
 };
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);

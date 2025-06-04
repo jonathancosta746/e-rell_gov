@@ -1,6 +1,19 @@
 .navbar{
-  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   padding: 20px;
+  background-color: #383838;
+  width: 100vw;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.logo{
+  height: 30px;
+  padding-left: 50px;
 }
 
 .brand{
@@ -15,13 +28,23 @@
 .links_list {
   display: flex;
   list-style: none;
+  width: 500px;
   justify-content: space-around;
   padding: 0;
+  color: #dadada;
+  padding-right: 50px;
 }
 
+.btn_sair{
+  color: rgb(196, 196, 196);
+}
 
 .active{
-  color: rgb(0, 0, 0);
+  color: #4EBCBF;
   font-weight: bold;
+}
+
+.no__active{
+  color: rgb(196, 196, 196);
 }
 

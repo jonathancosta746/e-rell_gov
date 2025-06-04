@@ -1,23 +1,16 @@
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 .container {
-  background-color: white;
-  width: 450px;
-  height: 80vh;
+  width: 100%;
   border-radius: 5px;
-  box-shadow: rgb(211, 210, 210) 10px 10px 50px;
   list-style: none;
+  padding-top: 100px;
+  
 }
 
 /*=============== BREAKPOINTS ===============*/
-/* For small devices */
-@media screen and (max-width: 800px){  
+/* For small devices 
+@media screen and (min-width: 600px){
   .container{
-    width: 395px;
+    width: 695px;
     height: 80vh;
-  }
-}
+  }*/
