@@ -73,6 +73,10 @@
   color: orange!important;
 }
 
+.concluido {
+  color: rgb(0, 0, 0)!important;
+}
+
 .actions {
   display: flex;
   justify-content: center;
@@ -119,6 +123,18 @@
     height: 35px;
     border-radius: 50%;   
   }
+
+
+  .filtros {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.filtros select {
+  padding: 0.5rem;
+  border-radius: 4px;
+}
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */

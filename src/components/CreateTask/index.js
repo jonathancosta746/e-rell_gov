@@ -156,8 +156,7 @@ const CreateTask = () => {
           <input 
             type="text" 
             name="partido" 
-            list="partidoOptions"
-            required 
+            list="partidoOptions" 
             placeholder="Partido"
             autoComplete="off"
             onChange={(e) => setPartido(e.target.value)}
@@ -183,9 +182,9 @@ const CreateTask = () => {
           />
           <datalist id="statusOptions">
             <option value="Pendente" />
-            <option value="Confirmada" />
+            <option value="Confirmado" />
             <option value="Cancelado" />
-            <option value="Concluída" />
+            <option value="Concluído" />
           </datalist>
         </label>
 
@@ -194,7 +193,6 @@ const CreateTask = () => {
             type="text" 
             name="uf" 
             list="ufOptions"
-            required 
             placeholder="UF"
             autoComplete="off"
             onChange={(e) => setUf(e.target.value)}
