@@ -114,7 +114,7 @@
   
  
   
-  .btn__delete{
+  .btn_delete{
     background-color: rgb(255, 127, 127);
     color: #eee;
     border: none;
@@ -124,16 +124,48 @@
     border-radius: 50%;   
   }
 
+  .btn_edit{
+    background-color: rgb(29, 169, 250);
+    color: #eee;
+    border: none;
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;   
+    margin-right: 10px;
+  }
 
-  .filtros {
+
+ .filtros {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
-  margin-bottom: 1rem;
+  align-items: center;
 }
+
+.checkboxContainer {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.checkboxItem {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.95rem;
+}
+
 
 .filtros select {
   padding: 0.5rem;
   border-radius: 4px;
+}
+
+.nao_editavel {
+  font-weight: bold;
+  font-size: 16px;
+  color: #888888!important;
 }
 
 /*=============== BREAKPOINTS ===============*/

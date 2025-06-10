@@ -46,12 +46,7 @@ const NavBar = () => {
                
             </>
             )}
-            <li>
-                <NavLink 
-                  to="/about" 
-                  className={({isActive}) => (isActive ? styles.active : styles.no__active)}>Sobre
-                </NavLink>
-            </li>
+            
             {user && (
                 <li>
                     <button className={styles.btn_sair} onClick={logout}>Sair</button>
