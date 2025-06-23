@@ -52,7 +52,7 @@ const CreateTask = () => {
 
     const now = new Date().toLocaleString("pt-BR");
 
-    // 🔧 Normaliza quebras de linha do campo observação
+    // Normaliza quebras de linha do campo observação
     const observacaoNormalizada = observacao
       .replace(/\r\n/g, "\n")
       .replace(/\r/g, "\n");
@@ -101,24 +101,22 @@ const CreateTask = () => {
     <div className={styles.container}>
       <form onSubmit={handleSubmit} className={styles.input__task}>
         {/* === CAMPOS DO FORMULÁRIO === */}
+
+        {/* Cargo como select */}
         <label>
-          <input 
-            type="text" 
-            name="cargo" 
-            list="cargoOptions"
-            required 
-            placeholder="Cargo"
-            autoComplete="off"
+          <select
+            name="cargo"
+            required
             onChange={(e) => setCargo(e.target.value)}
             value={cargo}
-          />
-          <datalist id="cargoOptions">
-            <option value="Empresário" />
-            <option value="Secretário" />
-            <option value="Senador" />
-            <option value="Ministro" />
-            <option value="Deputado" />
-          </datalist>
+          >
+            <option value="" disabled>Selecione o Cargo</option>
+            <option value="Empresário">Empresário</option>
+            <option value="Secretário">Secretário</option>
+            <option value="Senador">Senador</option>
+            <option value="Ministro">Ministro</option>
+            <option value="Deputado">Deputado</option>
+          </select>
         </label>
 
         <label>
@@ -154,23 +152,20 @@ const CreateTask = () => {
           />
         </label>
 
+        {/* Campo Empresa como select */}
         <label>
-          <input 
-            type="text" 
-            name="empresa" 
-            list="empresas"
-            required 
-            placeholder="Empresa"
-            autoComplete="off"
+          <select
+            name="empresa"
+            required
             onChange={(e) => setEmpresa(e.target.value)}
             value={empresa}
-          />
-          <datalist id="empresas">
-            <option value="Abragames" />
-            <option value="Abeaço" />
-            <option value="Grupo Petrópolis" />
-            <option value="SIAESP" />
-          </datalist>
+          >
+            <option value="" disabled>Selecione a Empresa</option>
+            <option value="Abragames">Abragames</option>
+            <option value="Abeaço">Abeaço</option>
+            <option value="Grupo Petrópolis">Grupo Petrópolis</option>
+            <option value="SIAESP">SIAESP</option>
+          </select>
         </label>
 
         <label>
@@ -179,7 +174,6 @@ const CreateTask = () => {
             name="nome" 
             required 
             placeholder="Nome"
-            autoComplete="off"
             onChange={(e) => setNome(e.target.value)}
             value={nome}
           />
@@ -191,7 +185,6 @@ const CreateTask = () => {
             name="partido" 
             list="partidoOptions" 
             placeholder="Partido"
-            autoComplete="off"
             onChange={(e) => setPartido(e.target.value)}
             value={partido}
           />
@@ -202,82 +195,74 @@ const CreateTask = () => {
           </datalist>
         </label>
                
+        {/* Campo Status como select */}
         <label>
-          <input 
-            type="text" 
-            name="status_compromisso" 
-            list="statusOptions"
-            required 
-            placeholder="Status"
-            autoComplete="off"
+          <select
+            name="status_compromisso"
+            required
             onChange={(e) => setStatuscompromisso(e.target.value)}
             value={status_compromisso}
-          />
-          <datalist id="statusOptions">
-            <option value="Pendente" />
-            <option value="Confirmado" />
-            <option value="Cancelado" />
-            <option value="Concluído" />
-          </datalist>
+          >
+            <option value="" disabled>Selecione o Status</option>
+            <option value="Pendente">Pendente</option>
+            <option value="Confirmado">Confirmado</option>
+            <option value="Cancelado">Cancelado</option>
+            <option value="Concluído">Concluído</option>
+          </select>
         </label>
 
+        {/* Campo UF como select */}
         <label>
-          <input 
-            type="text" 
-            name="uf" 
-            list="ufOptions"
-            placeholder="UF"
-            autoComplete="off"
+          <select
+            name="uf"
+            required
             onChange={(e) => setUf(e.target.value)}
             value={uf}
-          />
-          <datalist id="ufOptions">
-            <option value="AC" />
-            <option value="AL" />
-            <option value="AP" />
-            <option value="AM" />
-            <option value="BA" />
-            <option value="CE" />
-            <option value="DF" />
-            <option value="ES" />
-            <option value="GO" />
-            <option value="MA" />
-            <option value="MT" />
-            <option value="MS" />
-            <option value="MG" />
-            <option value="PA" />
-            <option value="PB" />
-            <option value="PR" />
-            <option value="PE" />
-            <option value="PI" />
-            <option value="RJ" />
-            <option value="RN" />
-            <option value="RS" />
-            <option value="RO" />
-            <option value="RR" />
-            <option value="SC" />
-            <option value="SP" />
-            <option value="SE" />
-            <option value="TO" />
-          </datalist>
+          >
+            <option value="" disabled>Selecione a UF</option>
+            <option value="AC">AC</option>
+            <option value="AL">AL</option>
+            <option value="AP">AP</option>
+            <option value="AM">AM</option>
+            <option value="BA">BA</option>
+            <option value="CE">CE</option>
+            <option value="DF">DF</option>
+            <option value="ES">ES</option>
+            <option value="GO">GO</option>
+            <option value="MA">MA</option>
+            <option value="MT">MT</option>
+            <option value="MS">MS</option>
+            <option value="MG">MG</option>
+            <option value="PA">PA</option>
+            <option value="PB">PB</option>
+            <option value="PR">PR</option>
+            <option value="PE">PE</option>
+            <option value="PI">PI</option>
+            <option value="RJ">RJ</option>
+            <option value="RN">RN</option>
+            <option value="RS">RS</option>
+            <option value="RO">RO</option>
+            <option value="RR">RR</option>
+            <option value="SC">SC</option>
+            <option value="SP">SP</option>
+            <option value="SE">SE</option>
+            <option value="TO">TO</option>
+          </select>
         </label>
 
+        {/* Campo Responsável como select */}
         <label>
-          <input 
-            type="text" 
-            name="responsavel" 
-            list="responsavelOptions"
-            required 
-            placeholder="Responsável"
-            autoComplete="off"
+          <select
+            name="responsavel"
+            required
             onChange={(e) => setResponsavel(e.target.value)}
             value={responsavel}
-          />
-          <datalist id="responsavelOptions">
-            <option value="João Santos" />
-            <option value="Dalila Costa" />
-            <option value="José Almeida" />
-          </datalist>
+          >
+            <option value="" disabled>Selecione o Responsável</option>
+            <option value="João Santos">João Santos</option>
+            <option value="Dalila Costa">Dalila Costa</option>
+            <option value="José Almeida">José Almeida</option>
+          </select>
         </label>
 
         {/* CAMPO DE OBSERVAÇÃO */}

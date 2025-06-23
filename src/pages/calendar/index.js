@@ -65,10 +65,6 @@ const Calendario = () => {
         // horário esperado no formato HH:mm (exemplo: "14:30")
         const [h] = task.horario.split(":").map(Number);
 
-        // Verifica se a hora do evento corresponde à hora da célula
-        // E se o minuto do evento está dentro de um "intervalo" para cair na célula da hora cheia
-        // Por exemplo, se um evento é 14:15, ele ainda apareceria na célula das 14:00
-        // Se você quiser que apareça APENAS em 14:00, use h === hora && m === 0;
         return h === hora;
       }) || []
     );
