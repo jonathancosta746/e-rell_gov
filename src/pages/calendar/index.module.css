@@ -1,0 +1,357 @@
+.calendarioMensal {
+  font-family: sans-serif;
+  padding: 20px;
+}
+
+.controleMes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.diasSemana {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.gradeMensal {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+
+.dia {
+  min-height: 100px;
+  border: 1px solid #ddd;
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+}
+
+.foraDoMes {
+  background-color: #f7f7f7;
+  color: #aaa;
+}
+
+.numeroDia {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.eventosDia {
+  font-size: 12px;
+}
+
+.evento {
+  background-color: #e6f0ff;
+  border: 1px solid #aac9f0;
+  border-radius: 4px;
+  padding: 4px;
+  margin-bottom: 4px;
+  font-size: 12px;
+  overflow-wrap: break-word;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modalContent {
+  background: white;
+  padding: 24px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+
+
+.btnFechar {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
+.historicoObservacoes {
+  margin-top: 20px;
+}
+
+.observacaoItem {
+  margin-bottom: 10px;
+  background: #f5f5f5;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+
+
+.btnFechar {
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+.btnFechar:hover {
+  background-color: #a12828;
+}
+
+/* calendario semanal */
+
+/* index.module.css */
+
+.calendarioSemanal {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  font-family: "Roboto", Arial, sans-serif;
+  color: #202124;
+  user-select: none;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.controleSemana {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  border-bottom: 1px solid #e0e0e0;
+  background: #f9f9f9;
+}
+
+.controleSemana button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  color: #3c4043;
+  font-size: 20px;
+  padding: 4px 12px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.controleSemana button:hover {
+  background-color: #e8f0fe;
+}
+
+.controleSemana h2 {
+  font-weight: 500;
+  font-size: 1.3rem;
+  color: #202124;
+  margin: 0;
+  user-select: text;
+}
+
+.diasSemanaSemanal {
+  display: grid;
+  grid-template-columns: 50px repeat(7, 1fr);
+  border-bottom: 1px solid #e0e0e0;
+  background-color: #f1f3f4;
+  color: #5f6368;
+  font-weight: 500;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+.diaSemanaSemanal {
+  text-align: center;
+  padding: 12px 8px;
+  border-left: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.diaSemanaSemanal:first-child {
+  border-left: none;
+  color: #5f6368;
+}
+
+.diaSemanaSemanal .data {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #202124;
+  margin-top: 4px;
+}
+
+.horaColuna {
+  grid-column: 1;
+  border-right: 1px solid #e0e0e0;
+  border-top: 1px solid #e0e0e0;
+  text-align: right;
+  padding: 6px 12px 6px 4px;
+  font-size: 0.85rem;
+  color: #5f6368;
+  user-select: none;
+}
+
+.gradeSemanal {
+  display: grid;
+  grid-template-columns: 50px repeat(7, 1fr);
+  grid-auto-rows: 60px; /* altura de cada linha por hora */
+  border-top: none;
+}
+
+.celulaSemanal {
+  border-top: 1px solid #e0e0e0;
+  border-left: 1px solid #e0e0e0;
+  position: relative;
+  padding: 2px 6px;
+  background: white;
+  overflow: visible;
+}
+
+.celulaSemanal.foraSemana {
+  background-color: #f9f9f9;
+  color: #bbb;
+}
+
+
+
+.eventoSemanal:hover {
+  background-color: #1669c1;
+  box-shadow: 0 4px 12px rgb(22 105 193 / 0.55);
+  color: white;
+}
+
+/* Modal padrão */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(32, 33, 36, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background-color: #fff;
+  padding: 24px 28px;
+  border-radius: 8px;
+  max-width: 480px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 6px 24px rgba(32, 33, 36, 0.28);
+  font-family: "Roboto", Arial, sans-serif;
+  color: #202124;
+}
+
+.btnFechar {
+  background-color: transparent;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: #5f6368;
+  transition: color 0.2s ease;
+}
+
+.btnFechar:hover {
+  color: #202124;
+}
+
+
+
+.diasSemanaSemanal {
+  display: grid;
+  /* Uma coluna para a hora, 7 para os dias da semana */
+  grid-template-columns: 80px repeat(7, 1fr); /* Ajuste o 80px conforme a largura da coluna de hora */
+  border-bottom: 1px solid #ccc;
+  background-color: #f0f0f0;
+}
+
+.diaSemanaSemanal {
+  padding: 8px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.gradeSemanal {
+  display: grid;
+  /* Define as mesmas colunas do cabeçalho */
+  grid-template-columns: 80px repeat(7, 1fr);
+  /* Sem gap vertical aqui, pois cada linha será sua própria row */
+  /* grid-gap: 1px; */ /* Pode adicionar um pequeno gap se quiser */
+  border: 1px solid #ccc;
+}
+
+.linhaHorario {
+  display: contents; /* Isso faz com que os filhos da linha sejam tratados diretamente pelo grid pai */
+}
+
+.horaColuna {
+  grid-column: 1; /* Garante que a coluna da hora esteja na primeira coluna do grid */
+  border-right: 1px solid #eee;
+  padding: 8px;
+  text-align: right;
+  align-self: start; /* Alinha o texto da hora ao topo da célula */
+  position: sticky; /* Se quiser fixar a hora ao scrollar */
+  left: 0;
+  background-color: white; /* Para cobrir o conteúdo por baixo ao fixar */
+  z-index: 1; /* Para que fique acima dos eventos */
+  height: 60px; /* Altura padrão para cada slot de hora */
+  border-bottom: 1px solid #eee;
+}
+
+.celulaSemanal {
+  border-bottom: 1px solid #eee;
+  border-right: 1px solid #eee; /* Adiciona bordas para simular células */
+  padding: 4px;
+  min-height: 60px; /* Define uma altura mínima para cada slot de hora */
+  position: relative; /* Para posicionar eventos dentro */
+  overflow: hidden; /* Para esconder eventos que transbordam */
+}
+
+.eventoSemanal {
+  color: rgb(36, 36, 36);
+  background-color: #e6f7ff;
+  border: 1px solid #91d5ff;
+  border-radius: 4px;
+  padding: 2px 4px;
+  margin-bottom: 2px;
+  font-size: 0.8em;
+  white-space: nowrap; /* Tenta manter o texto em uma linha */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Adiciona "..." se o texto for muito longo */
+}
+
+.eventoHorario {
+    font-weight: bold;
+}

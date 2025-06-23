@@ -6,6 +6,7 @@ import About from "./pages/about";
 import Register from './pages/register';
 import Login from './pages/login';
 import Dashboard from './pages/dashboard';
+import Calendario from './pages/calendar';
 
 //components
 import NavBar from './components/navBar/';
@@ -57,7 +58,10 @@ function App() {
                   path="/login" 
                   element={!user ? <Login /> : <Navigate to="/" />}
                 />
-                
+                <Route 
+                  path="/calendario" 
+                  element={user ? <Calendario /> : <Navigate to="/" />}
+                />
                 <Route path="/about" element={<About />}/>
               </Routes>
             </div>

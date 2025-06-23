@@ -1,5 +1,4 @@
 import styles from "./index.module.css";
-
 import { useState } from "react";
 
 // hooks
@@ -12,12 +11,15 @@ import AddSharpIcon from '@mui/icons-material/AddSharp';
 const CreateTask = () => {
   const [cargo, setCargo] = useState("");
   const [dt_marcada, setDtmarcada] = useState("");
+  const [horario, setHorario] = useState("");
   const [dt_pedido, setPedido] = useState("");
   const [empresa, setEmpresa] = useState("");
   const [nome, setNome] = useState("");
   const [partido, setPartido] = useState("");
   const [status_compromisso, setStatuscompromisso] = useState("");
   const [uf, setUf] = useState("");
+  const [responsavel, setResponsavel] = useState("");
+  const [observacao, setObservacao] = useState("");
 
   const [formError, setFormError] = useState("");
 
@@ -28,18 +30,17 @@ const CreateTask = () => {
     e.preventDefault();
     setFormError("");
 
-    const now = new Date().toLocaleString("pt-BR");
-
-    // check values (sem dt_inclusao e dt_edicao pois são automáticos)
     const camposObrigatorios = [
       cargo,
       dt_marcada,
+      horario,
       dt_pedido,
       empresa,
       nome,
       partido,
       status_compromisso,
-      uf
+      uf,
+      responsavel,
     ];
 
     if (camposObrigatorios.some((campo) => !campo)) {
@@ -49,16 +50,35 @@ const CreateTask = () => {
 
     if (formError) return;
 
+    const now = new Date().toLocaleString("pt-BR");
+
+    // 🔧 Normaliza quebras de linha do campo observação
+    const observacaoNormalizada = observacao
+      .replace(/\r\n/g, "\n")
+      .replace(/\r/g, "\n");
+
+    const observacoes = observacao
+      ? [{
+          observacao: observacaoNormalizada,
+          dt_insercao: now,
+          dt_edicao: now,
+          user: user.displayName,
+        }]
+      : [];
+
     insertDocument({
       cargo,
       dt_edicao: now,
       dt_marcada,
+      horario,
       dt_pedido,
       empresa,
       nome,
       partido,
       status_compromisso,
       uf,
+      responsavel,
+      observacoes,
       uid: user.uid,
       user: user.displayName,
     });
@@ -66,17 +86,21 @@ const CreateTask = () => {
     // Limpar campos após envio
     setCargo("");
     setDtmarcada("");
+    setHorario("");
     setPedido("");
     setEmpresa("");
     setNome("");
     setPartido("");
     setStatuscompromisso("");
     setUf("");
+    setResponsavel("");
+    setObservacao("");
   };
 
   return (
     <div className={styles.container}>
       <form onSubmit={handleSubmit} className={styles.input__task}>
+        {/* === CAMPOS DO FORMULÁRIO === */}
         <label>
           <input 
             type="text" 
@@ -111,15 +135,24 @@ const CreateTask = () => {
         <label>
           <p>Data Marcada</p>
           <input 
-            type="datetime-local" 
+            type="date" 
             name="dt_marcada" 
             required 
-            placeholder="Data Agendada"
-            autoComplete="off"
             onChange={(e) => setDtmarcada(e.target.value)}
             value={dt_marcada}
           />
-        </label>      
+        </label>
+
+        <label>
+          <p>Horário</p>
+          <input 
+            type="time" 
+            name="horario" 
+            required 
+            onChange={(e) => setHorario(e.target.value)}
+            value={horario}
+          />
+        </label>
 
         <label>
           <input 
@@ -228,10 +261,39 @@ const CreateTask = () => {
             <option value="TO" />
           </datalist>
         </label>
+
+        <label>
+          <input 
+            type="text" 
+            name="responsavel" 
+            list="responsavelOptions"
+            required 
+            placeholder="Responsável"
+            autoComplete="off"
+            onChange={(e) => setResponsavel(e.target.value)}
+            value={responsavel}
+          />
+          <datalist id="responsavelOptions">
+            <option value="João Santos" />
+            <option value="Dalila Costa" />
+            <option value="José Almeida" />
+          </datalist>
+        </label>
+
+        {/* CAMPO DE OBSERVAÇÃO */}
+        <label>
+          <textarea
+            name="observacao"
+            placeholder="Observações"
+            rows={3}
+            onChange={(e) => setObservacao(e.target.value)}
+            value={observacao}
+          />
+        </label>
       
         {!response.loading && 
           <button type="submit" className={styles.btn__input}>
-            <AddSharpIcon/>
+            <AddSharpIcon />
           </button>
         }
 

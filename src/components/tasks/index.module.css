@@ -1,33 +1,31 @@
 .dashboard {
-    text-align: center;
-    padding-left: 50px;
-    padding-right: 50px;
-      border-radius: 20px;
-  }
-  
-  .dashboard h2 {
-    font-size: 2.2em;
-    margin-bottom: 0.5em;
-  }
-  
-  .dashboard p {
-    color: #aaa;
-    margin-bottom: 1em;
-  }
+  text-align: center;
+  padding-left: 50px;
+  padding-right: 50px;
+  border-radius: 20px;
+}
 
-  
+.dashboard h2 {
+  font-size: 2.2em;
+  margin-bottom: 0.5em;
+}
+
+.dashboard p {
+  color: #aaa;
+  margin-bottom: 1em;
+}
+
 .taks__area {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 8px;
-
 }
 
 .cabecalho,
 .task_row {
   display: grid;
-  grid-template-columns: repeat(10, 1fr); 
+  grid-template-columns: repeat(12, 1fr); 
   align-items: center;
   gap: 8px;
   padding: 0px 12px;
@@ -39,7 +37,7 @@
   border-bottom: 2px solid #ccc;
 }
 
-.cabecalho p{
+.cabecalho p {
   color: rgb(70, 70, 70);
 }
 
@@ -49,8 +47,20 @@
   transition: background 0.2s;
 }
 
-.task_row p{
+.task_row p {
   color: black;
+  font-size: 14px;
+}
+
+.task_row input {
+  font-size: 14px;
+  padding: 4px 6px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.task_row input[type="datetime-local"] {
+  max-width: 160px;
 }
 
 .task_row:hover {
@@ -83,60 +93,58 @@
   align-items: center;
 }
 
+.taks__area::-webkit-scrollbar {
+  width: 10px;
+}
 
-  .taks__area::-webkit-scrollbar {
-    width: 10px;
-  }
-  .taks__area::-webkit-scrollbar-track {
-    background: #ECEBF2;
-  }
-  .taks__area::-webkit-scrollbar-thumb {
-    background: #c9c6d4;
-    border-radius: 20px;
-    box-shadow: 0 5px 20px rgba(188, 179, 223, 0.3);
-  }
-  
-  .notask {
-    text-align: center;
-  }
+.taks__area::-webkit-scrollbar-track {
+  background: #ECEBF2;
+}
 
-  .dashboard span{
-    font-weight: bold;
-  }
-  
-  .task_header {
-    display: flex;
-    justify-content: space-between;
-    font-weight: bold;
-    border-bottom: 2px solid #ccc;
-    padding: 10px;
-  }
-  
- 
-  
-  .btn_delete{
-    background-color: rgb(255, 127, 127);
-    color: #eee;
-    border: none;
-    cursor: pointer;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;   
-  }
+.taks__area::-webkit-scrollbar-thumb {
+  background: #c9c6d4;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(188, 179, 223, 0.3);
+}
 
-  .btn_edit{
-    background-color: rgb(29, 169, 250);
-    color: #eee;
-    border: none;
-    cursor: pointer;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;   
-    margin-right: 10px;
-  }
+.notask {
+  text-align: center;
+}
 
+.dashboard span {
+  font-weight: bold;
+}
 
- .filtros {
+.task_header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  border-bottom: 2px solid #ccc;
+  padding: 10px;
+}
+
+.btn_delete {
+  background-color: rgb(255, 127, 127);
+  color: #eee;
+  border: none;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;   
+}
+
+.btn_edit {
+  background-color: rgb(29, 169, 250);
+  color: #eee;
+  border: none;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;   
+  margin-right: 10px;
+}
+
+.filtros {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -153,9 +161,8 @@
   display: flex;
   align-items: center;
   gap: 0.3rem;
-  font-size: 0.95rem;
+  font-size: 12px;
 }
-
 
 .filtros select {
   padding: 0.5rem;
@@ -168,23 +175,61 @@
   color: #888888!important;
 }
 
+.btn_expand {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 4px;
+}
+
+.observacoes {
+  background-color: #f9f9f9;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  animation: expand 0.2s ease-out;
+}
+
+.obsItem {
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.observacao p{
+  color: black;
+}
+
+.informacao{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  padding-top: 10px;
+  font-size: 14px;
+}
+
+.obsItem p {
+  margin: 2px 0;
+}
+
+.semObs {
+  font-style: italic;
+  color: #666;
+}
+
+
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
-@media screen and (max-width: 800px){  
-  .taks__area{
+@media screen and (max-width: 800px) {  
+  .taks__area {
     width: 395px;
   }
 }
 
-@media screen and (min-height: 1020px){  
-  .taks__area{
+@media screen and (min-height: 1020px) {  
+  .taks__area {
     height: 550px;
   }
 }
-
-
-
-
-
-
- 

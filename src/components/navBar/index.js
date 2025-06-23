@@ -40,7 +40,15 @@ const NavBar = () => {
                     <NavLink 
                         to="/"
                         className={({isActive}) => (isActive ? styles.active : styles.no__active)}
-                        >Calendario
+                        >Agenda
+                    </NavLink>
+                </li>
+
+                <li>
+                    <NavLink 
+                        to="/calendario"
+                        className={({isActive}) => (isActive ? styles.active : styles.no__active)}
+                        >Calendário
                     </NavLink>
                 </li>
                
